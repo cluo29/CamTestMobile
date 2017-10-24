@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.github.cluo29.camtest24.CreateReplayActivity">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarCreateReplay"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="@android:color/white"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+    </android.support.v7.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/textViewCR1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="12dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="22sp"
+        android:text="Replay Name:"
+        android:layout_below="@+id/toolbarCreateReplay"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:id="@+id/editTextCR1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:layout_below="@+id/textViewCR1"
+        android:layout_alignStart="@+id/textViewCR1"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/textViewCR2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="22sp"
+        android:text="Targeted App:"
+        android:layout_below="@+id/editTextCR1"
+        android:layout_alignStart="@+id/textViewCR1" />
+
+    <EditText
+        android:id="@+id/editTextCR2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="App"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/textViewCR2"
+        android:layout_alignStart="@+id/textViewCR2" />
+
+    <TextView
+        android:id="@+id/textViewCR3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="22sp"
+        android:text="Video File:"
+        android:layout_below="@+id/editTextCR2"
+        android:layout_alignStart="@+id/editTextCR2" />
+
+    <TextView
+        android:id="@+id/textViewCR4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@android:color/background_dark"
+        android:textSize="22sp"
+        android:text="Oritentation:"
+        android:layout_below="@+id/buttonCR1"
+        android:layout_alignStart="@+id/textViewCR3" />
+
+    <RadioGroup
+        android:id="@+id/radioReplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/textViewCR4"
+        android:layout_alignStart="@+id/textViewCR4"
+         >
+
+        <RadioButton
+            android:id="@+id/radioButtonCR1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:text="Portrait"
+            android:textSize="22sp"
+                />
+        <RadioButton
+            android:id="@+id/radioButtonCR2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:text="Landscape"
+            android:textSize="22sp"
+              />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textViewCR5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/background_dark"
+        android:textSize="22sp"
+        android:text="Replay Mode:"
+        android:layout_marginTop="4dp"
+        android:layout_below="@+id/radioReplay"
+        android:layout_alignStart="@+id/radioReplay" />
+
+    <RadioGroup
+        android:id="@+id/radioReplay2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/textViewCR5"
+        android:layout_alignStart="@+id/textViewCR5"
+        >
+
+        <RadioButton
+            android:id="@+id/radioButtonCR3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:text="Realistic"
+            android:textSize="22sp" />
+
+        <RadioButton
+            android:id="@+id/radioButtonCR4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="33dp"
+            android:text="Frame by Frame"
+            android:textSize="22sp" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textViewCR3"
+        android:layout_toEndOf="@+id/textViewCR4"
+        android:text="null"
+        android:textColor="@android:color/background_dark"
+        android:textSize="22sp" />
+
+    <Button
+        android:id="@+id/buttonCR1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="23dp"
+        android:text="pick"
+        android:layout_alignTop="@+id/textView6"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/buttonCR2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirm"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp" />
+
+
+</RelativeLayout>
