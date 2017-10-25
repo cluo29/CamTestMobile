@@ -52,7 +52,7 @@ public class Replay_Provider extends ContentProvider {
         public static final String VIDEO = "video";
         public static final String ORIENTATION = "orientation";
         public static final String MODE = "mode";
-        public static final String STATUS = "status"; //running, scheduled, pending
+        public static final String STATUS = "status"; //Running, Scheduled, Pending
     }
 
     public static String DATABASE_NAME = "replay.db";

@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="6dp"
         android:textColor="@android:color/background_dark"
         android:textSize="22sp"
         android:text="Replay Name:"
@@ -37,13 +37,13 @@
         android:text="Name"
         android:layout_below="@+id/textViewCR1"
         android:layout_alignStart="@+id/textViewCR1"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="6dp" />
 
     <TextView
         android:id="@+id/textViewCR2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
         android:textColor="@android:color/background_dark"
         android:textSize="22sp"
         android:text="Targeted App:"
@@ -57,7 +57,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="App"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
         android:layout_below="@+id/textViewCR2"
         android:layout_alignStart="@+id/textViewCR2" />
 
@@ -65,7 +65,7 @@
         android:id="@+id/textViewCR3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
         android:textColor="@android:color/background_dark"
         android:textSize="22sp"
         android:text="Video File:"
@@ -87,7 +87,7 @@
         android:id="@+id/radioReplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
         android:layout_below="@+id/textViewCR4"
         android:layout_alignStart="@+id/textViewCR4"
          >
@@ -126,7 +126,7 @@
         android:id="@+id/radioReplay2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="4dp"
         android:layout_below="@+id/textViewCR5"
         android:layout_alignStart="@+id/textViewCR5"
         >
@@ -157,25 +157,29 @@
         android:layout_toEndOf="@+id/textViewCR4"
         android:text="null"
         android:textColor="@android:color/background_dark"
-        android:textSize="22sp" />
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/buttonCR1"
+        style="@style/Widget.AppCompat.Button.Small"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="23dp"
+        android:layout_alignStart="@+id/textViewCR4"
+        android:layout_below="@+id/textViewCR3"
+        android:background="@color/colorAccent"
         android:text="pick"
-        android:layout_alignTop="@+id/textView6"
-        android:layout_alignParentEnd="true" />
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textColor="@android:color/background_light" />
 
     <Button
         android:id="@+id/buttonCR2"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Confirm"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="10dp" />
+        android:layout_marginBottom="6dp"
+        android:text="Confirm" />
 
 
 </RelativeLayout>
