@@ -11,13 +11,11 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
-import android.os.Environment;
 import android.provider.BaseColumns;
 import android.util.Log;
 
 import java.io.File;
 import java.util.HashMap;
-import java.util.UUID;
 
 /**
  * Created by chul3 on 25/10/2017.

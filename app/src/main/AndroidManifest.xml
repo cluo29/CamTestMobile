@@ -5,6 +5,24 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="io.github.cluo29.camtest24.WRITE_CONTEXT_DATA" />
+    <uses-permission android:name="io.github.cluo29.camtest24.READ_CONTEXT_DATA" />
+
+
+    <permission
+        android:name="io.github.cluo29.camtest24.READ_CONTEXT_DATA"
+        android:description="@string/app_name"
+        android:label="Read CamTest Context data"
+        android:protectionLevel="normal" >
+    </permission>
+
+    <permission
+        android:name="io.github.cluo29.camtest24.WRITE_CONTEXT_DATA"
+        android:description="@string/app_name"
+        android:label="Write CamTest Context data"
+        android:protectionLevel="normal" >
+    </permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +30,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <provider android:name="io.github.cluo29.camtest24.providers.Replay_Provider"
+            android:authorities="${applicationId}.provider.replay"
+            android:exported="true"
+            android:readPermission="io.github.cluo29.camtest24.READ_CONTEXT_DATA"
+            android:writePermission="io.github.cluo29.camtest24.WRITE_CONTEXT_DATA"/>
+
+        <provider android:name="io.github.cluo29.camtest24.providers.Result_Provider"
+            android:authorities="${applicationId}.provider.result"
+            android:exported="true"
+            android:readPermission="io.github.cluo29.camtest24.READ_CONTEXT_DATA"
+            android:writePermission="io.github.cluo29.camtest24.WRITE_CONTEXT_DATA"/>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
