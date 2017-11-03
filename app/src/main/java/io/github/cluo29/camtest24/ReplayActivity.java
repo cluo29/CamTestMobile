@@ -1,6 +1,7 @@
 package io.github.cluo29.camtest24;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -49,4 +50,39 @@ public class ReplayActivity extends AppCompatActivity {
         }
         return true;
     }
+
+
+    class ListItem {
+        private Drawable image;
+        private String status;
+        private String replayName;
+
+        public Drawable getImage() {
+            return image;
+        }
+
+        public void setImage(Drawable image) {
+            this.image = image;
+        }
+
+        public String getStatus() {
+            return status;
+        }
+
+        public void setStatus(String status) {
+            this.status = status;
+        }
+        public String getReplayName() {
+            return replayName;
+        }
+
+        public void setReplayName(String replayName) {
+            this.replayName = replayName;
+        }
+
+        
+
+    }
+
+
 }

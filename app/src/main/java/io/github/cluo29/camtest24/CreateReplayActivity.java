@@ -119,7 +119,7 @@ public class CreateReplayActivity extends AppCompatActivity {
                 rowData.put(Replay_Info.VIDEO, realPath);
                 rowData.put(Replay_Info.ORIENTATION, OrientationString);
                 rowData.put(Replay_Info.MODE, ModeString);
-                rowData.put(Replay_Info.STATUS, "Pending");
+                rowData.put(Replay_Info.STATUS, "Saved");
                 getContentResolver().insert(Replay_Info.CONTENT_URI,rowData);
                 finish();
             }

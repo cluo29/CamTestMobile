@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="6dip">
+
+    <ImageView
+        android:id="@+id/RListImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxHeight="72dp"
+        android:maxWidth="72dp"
+        android:paddingBottom="20dp"
+        android:paddingRight="10dp"
+        android:paddingTop="20dp" />
+
+    <TextView
+        android:id="@+id/textViewRList1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/RListImage"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/RListImage"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewRList2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:text="TextView"
+        android:layout_alignBaseline="@+id/textViewRList1"
+        android:layout_alignBottom="@+id/textViewRList1"
+        android:layout_toEndOf="@+id/textViewRList1" />
+
+    <TextView
+        android:id="@+id/textViewRList3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textViewRList2"
+        android:layout_below="@+id/textViewRList2"
+        android:layout_marginTop="20dp"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textViewRList4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="17dp"
+        android:text="TextView"
+        android:layout_alignBaseline="@+id/textViewRList2"
+        android:layout_alignBottom="@+id/textViewRList2"
+        android:layout_toEndOf="@+id/textViewRList2" />
+
+    <TextView
+        android:id="@+id/textViewRList5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:layout_alignBaseline="@+id/textViewRList4"
+        android:layout_alignBottom="@+id/textViewRList4"
+        android:layout_toEndOf="@+id/textViewRList4" />
+
+    <TextView
+        android:id="@+id/textViewRList6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textViewRList5"
+        android:layout_toEndOf="@+id/textViewRList5"
+        android:text="TextView" />
+
+
+</RelativeLayout>
