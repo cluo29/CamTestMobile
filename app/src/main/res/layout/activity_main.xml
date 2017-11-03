@@ -25,4 +25,5 @@
         android:text="Manage Replay"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fileButton" />
+
 </android.support.constraint.ConstraintLayout>

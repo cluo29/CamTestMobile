@@ -23,7 +23,7 @@ import java.util.HashMap;
 
 public class Replay_Provider extends ContentProvider {
 
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
 
     public static String AUTHORITY = "io.github.cluo29.camtest24.provider.replay";
 
@@ -63,7 +63,7 @@ public class Replay_Provider extends ContentProvider {
             Replay_Info._ID + " integer primary key autoincrement,"
                     + Replay_Info.TIMESTAMP + " real default 0,"
                     + Replay_Info.DAY + " real default 0,"
-                    + Replay_Info.MONTH + " real default 0,"
+                    + Replay_Info.MONTH + " text default '',"
                     + Replay_Info.YEAR + " real default 0,"
                     + Replay_Info.REPLAYNAME + " text default '',"
                     + Replay_Info.APPNAME + " text default '',"

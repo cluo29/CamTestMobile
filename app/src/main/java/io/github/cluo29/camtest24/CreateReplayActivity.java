@@ -112,7 +112,7 @@ public class CreateReplayActivity extends AppCompatActivity {
                 ContentValues rowData = new ContentValues();
                 rowData.put(Replay_Info.TIMESTAMP, System.currentTimeMillis());
                 rowData.put(Replay_Info.DAY, dateData.get(Calendar.DAY_OF_MONTH));
-                rowData.put(Replay_Info.MONTH, dateData.get(Calendar.MONTH));
+                rowData.put(Replay_Info.MONTH, theMonth(dateData.get(Calendar.MONTH)));
                 rowData.put(Replay_Info.YEAR, dateData.get(Calendar.YEAR));
                 rowData.put(Replay_Info.REPLAYNAME, replayNameString);
                 rowData.put(Replay_Info.APPNAME, appNameString);
@@ -124,6 +124,11 @@ public class CreateReplayActivity extends AppCompatActivity {
                 finish();
             }
         });
+    }
+
+    public static String theMonth(int month){
+        String[] monthNames = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+        return monthNames[month];
     }
 
     public Uri selectedfile;

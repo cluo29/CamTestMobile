@@ -2,6 +2,7 @@ package io.github.cluo29.camtest24;
 
 import android.content.Intent;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,10 +12,14 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import io.github.cluo29.camtest24.providers.Replay_Provider.Replay_Info;
 
 import java.util.ArrayList;
 
@@ -116,21 +121,72 @@ public class ReplayActivity extends AppCompatActivity {
 
         mList = new ArrayList<ReplayActivity.ListItem>();
 
-        ListItem item = new ListItem();
-        item.setImage(res.getDrawable(R.drawable.ic_action_done));
-        item.setStatus("Done");
-        item.setReplayName("Super Replay");
-        item.setAppName("Super App");
-        item.setDay("21");
-        item.setMonth("1");
-        item.setYear("1111");
+        //example to add one item
 
 
-        mList.add(item);
+
+
+
+        //query DB to do this
+
+        Cursor cursor = getContentResolver().query(Replay_Info.CONTENT_URI, null,
+                null, null, Replay_Info._ID + " DESC");
+
+        if (cursor != null) {
+            while (cursor.moveToNext()) {
+                ListItem item = new ListItem();
+                String status = cursor.getString(cursor.getColumnIndex(Replay_Info.STATUS));
+                if(status.equals("Saved"))
+                {
+                    item.setImage(res.getDrawable(R.drawable.ic_action_save));
+                }
+                else if(status.equals("Scheduled"))
+                {
+                    item.setImage(res.getDrawable(R.drawable.ic_action_scheduled));
+                }
+                else if(status.equals("Done"))
+                {
+                    item.setImage(res.getDrawable(R.drawable.ic_action_done));
+                }
+                item.setStatus(status);
+                item.setReplayName(cursor.getString(cursor.getColumnIndex(Replay_Info.REPLAYNAME)));
+                item.setAppName(cursor.getString(cursor.getColumnIndex(Replay_Info.APPNAME)));
+                item.setDay(""+cursor.getInt(cursor.getColumnIndex(Replay_Info.DAY)));
+                item.setMonth(cursor.getString(cursor.getColumnIndex(Replay_Info.MONTH)));
+                item.setYear(cursor.getString(cursor.getColumnIndex(Replay_Info.YEAR)));
+
+                mList.add(item);
+            }
+        }
+        if (cursor != null && !cursor.isClosed())
+        {
+            cursor.close();
+        }
+
+
 
         MainListViewAdapter adapter = new MainListViewAdapter();
 
         mListView.setAdapter(adapter);
+
+        mListView.setOnItemClickListener(new android.widget.AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                //Toast.makeText(ReplayActivity.this,"You selected : " +position , Toast.LENGTH_SHORT).show();
+
+                //find position in ArrayList<ListItem> mList;
+
+                //the first one is 0
+
+                //pass to a new activity
+                Intent i = new Intent( getApplicationContext(), ManageReplayActivity.class);
+                i.putExtra("ReplayName",mList.get(position).getReplayName());
+                i.putExtra("AppName",mList.get(position).getAppName());
+                startActivity(i);
+
+            }
+        });
     }
 
     // Menu icons are inflated just as they were with actionbar
