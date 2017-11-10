@@ -74,7 +74,7 @@ public class ManageReplayActivity extends AppCompatActivity {
 
                 ContentValues values = new ContentValues();
 
-                values.put(Replay_Info.STATUS, "Scheduled");
+                values.put(Replay_Info.STATUS, "Ready");
                 getContentResolver().update(Replay_Info.CONTENT_URI,values,Replay_Info._ID+"=?",new String[]{String.valueOf(itemID)}); //id is the id of the row you wan to update
 
 

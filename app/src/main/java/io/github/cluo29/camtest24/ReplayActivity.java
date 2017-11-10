@@ -140,7 +140,7 @@ public class ReplayActivity extends AppCompatActivity {
                 {
                     item.setImage(res.getDrawable(R.drawable.ic_action_save));
                 }
-                else if(status.equals("Scheduled"))
+                else if(status.equals("Ready"))
                 {
                     item.setImage(res.getDrawable(R.drawable.ic_action_scheduled));
                 }
