@@ -3,15 +3,22 @@ package io.github.cluo29.camtest24;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
 import io.github.cluo29.camtest24.providers.Replay_Provider.Replay_Info;
+import io.github.cluo29.camtest24.providers.Result_Provider.Result_Info;
 
 public class ManageReplayActivity extends AppCompatActivity {
 
@@ -85,9 +92,55 @@ public class ManageReplayActivity extends AppCompatActivity {
                 //export to csv.
                 Toast.makeText(ManageReplayActivity.this, "Exported", Toast.LENGTH_LONG).show();
 
+                //use ; to split
+                Cursor cursor = getContentResolver().query(Result_Info.CONTENT_URI, null,
+                        null, null, Result_Info._ID + " ASC");
+
+                if (cursor != null) {
+                    while (cursor.moveToNext()) {
+                        String TYPE = cursor.getString(cursor.getColumnIndex(Result_Info.TYPE));
+                        String TITLE = cursor.getString(cursor.getColumnIndex(Result_Info.TITLE));
+                        String INFO = cursor.getString(cursor.getColumnIndex(Result_Info.INFO));
+                        String EVENTTIME = cursor.getString(cursor.getColumnIndex(Result_Info.EVENTTIME));
+
+                        String outputLine = TYPE + ";" +
+                                TITLE + ";" +
+                                INFO + ";" +
+                                EVENTTIME;
+
+                        Log.d("123", "out = "+ outputLine);
+
+                        File file = new File(Environment.getExternalStorageDirectory() +
+                                "/Documents/output.csv");
+
+                        try {
+                            if (!file.exists()) {
+                                file.createNewFile();
+                            }
+
+                            FileOutputStream out = new FileOutputStream(file, true);
+                            //true means append
+
+                            StringBuffer sb = new StringBuffer();
+                            sb.append(outputLine + "\r\n");
+                            out.write(sb.toString().getBytes("utf-8"));//注意需要转换对应的字符集
+                            out.flush();
+                            out.close();
+
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }
+                if (cursor != null && !cursor.isClosed())
+                {
+                    cursor.close();
+                }
+
+
             }
         });
 
-        setSupportActionBar(toolbar);
     }
 }
