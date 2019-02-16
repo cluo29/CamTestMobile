@@ -10,12 +10,12 @@
     <permission
         android:name="io.github.cluo29.camtest24.READ_CONTEXT_DATA"
         android:description="@string/app_name"
-        android:label="Read CamTest Context data"
+        android:label="Read Replay Settings"
         android:protectionLevel="normal"></permission>
     <permission
         android:name="io.github.cluo29.camtest24.WRITE_CONTEXT_DATA"
         android:description="@string/app_name"
-        android:label="Write CamTest Context data"
+        android:label="Record Output in Mobile Client"
         android:protectionLevel="normal"></permission>
 
     <application
